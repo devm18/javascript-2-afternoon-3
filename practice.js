@@ -28,6 +28,7 @@
 */
 
 // Code Here 
+const first = (arr, cb) => cb(arr[0]); 
 
 // Do not edit the code below.
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
@@ -48,6 +49,7 @@ first(names, function(firstName){
 */
 
 //Code Here
+const last = (arr, cb) => cb(arr[arr.length-1]); 
 
 // Do not edit the code below.
 last(names, function(lastName){
@@ -66,6 +68,7 @@ last(names, function(lastName){
 */
 
 //Code Here
+const multiply = (num1, num2, cb) => cb(num1 * num2);
 
 // Do not edit the code below.
 multiply(4, 3, function(answer){
@@ -85,6 +88,7 @@ multiply(4, 3, function(answer){
 */
 
 //Code Here 
+const contains = (arr, name, cb) => arr.includes(name) ? cb(true) : cb(false);
 
 // Do not edit the code below.
 contains(names, 'Colt', function(result){
@@ -106,6 +110,11 @@ contains(names, 'Colt', function(result){
 */
 
 //Code Here
+const uniq = (arr, cb) => { 
+  // return cb(arr.filter((e,i) => arr.indexOf(e) === i));
+  let newArr = arr.filter((e,i) => arr.indexOf(e) === i);
+  return cb(newArr);
+}
 
 // Do not edit the code below.
 uniq(names, function(uniqArr){
@@ -123,6 +132,7 @@ uniq(names, function(uniqArr){
 */
 
 //Code Here 
+const each = (arr, cb) => arr.forEach((e,i) => cb(name, i)); 
 
 // Do not edit the code below.
 each(names, function(item, indice){
@@ -140,6 +150,13 @@ each(names, function(item, indice){
 */
 
 // Code here
+const getUserById = (arr, id, cb) => {
+  arr.forEach((elem,i) => {
+    if(elem.id === id) {
+      cb(elem)
+    }
+  })
+}
 
 // Do not edit the code below.
 var users = [
